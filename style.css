@@ -6,7 +6,7 @@
 
 body {
   font-family:
-    'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
     Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -108,7 +108,7 @@ h2 {
   width: 40px;
   height: auto;
   vertical-align: middle;
-  margin-left: 8px;  
+  margin-left: 8px;
   transform-origin: 70% 70%;
 }
 
@@ -117,12 +117,24 @@ h2 {
 }
 
 @keyframes wave {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(15deg); }
-  40% { transform: rotate(-10deg); }
-  60% { transform: rotate(15deg); }
-  80% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 .about-me {
   display: flex;
@@ -315,7 +327,7 @@ h2 {
 .recommendation span {
   color: #7600bc;
   font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Scroll to Top Button */
@@ -386,7 +398,7 @@ h2 {
 input,
 textarea {
   font-family:
-    'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
     Arial, sans-serif;
   margin: 10px 0;
   width: 100%;

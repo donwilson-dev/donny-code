@@ -1,27 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family:
     'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
     Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Navigation Bar */
 
 #home {
   background-color: #7600bc;
-  padding-bottom: 1cm;
-  margin-left: -1cm;
-  margin-right: -1cm;
-  margin-top: -1cm;
-  padding-top: 2cm;
-  padding-bottom: 2cm;
-  height: 5mm;
+  padding: 1.5rem 1rem;
+  margin: 0;
+  min-height: auto;
+}
+
+.profile_name {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile_name .contact_info {
+  font-size: 0.95rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact_info img {
+  width: 25px;
+  margin-right: 8px;
+}
+
+.topdiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
 }
 
 .topmenu {
   color: lightgray;
-  margin: 10px;
-  padding: 20px;
-  font-size: 20px;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
   text-decoration: none;
 }
 
@@ -29,32 +67,6 @@ body {
   color: white;
   font-weight: bolder;
   text-decoration: underline;
-}
-
-.topdiv {
-  float: right;
-  padding-right: 1cm;
-}
-
-.profile_name {
-  float: left;
-  padding-left: 2cm;
-  color: white;
-  font-size: 25px;
-}
-
-.profile_name .contact_info {
-  font-size: 15px;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-
-.contact_info img {
-  width: 25px;
-  margin-right: 10px;
-  float: left;
 }
 
 /* Everything Below Nav */
@@ -68,24 +80,16 @@ body {
 /* Titles */
 
 h2 {
-  text-align: justify;
-  font-size: 50px;
+  font-size: 3rem;
   text-align: center;
-  float: left;
   color: #7600bc;
-  margin: 30px;
-  margin-left: 60px;
-  margin-top: 40px;
-  margin-bottom: 0px;
+  margin: 2rem 0 1rem;
 }
 
 .introduction {
-  text-align: justify;
-  font-size: 30px;
+  font-size: 1.4rem;
   text-align: center;
-  float: left;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin: 1rem 0 1.5rem;
   animation-duration: 5s;
   position: relative;
 }
@@ -94,33 +98,70 @@ h2 {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 /* About Me */
 
+.wave {
+  display: inline-block;
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 8px;  
+  transform-origin: 70% 70%;
+}
+
+.wave:hover {
+  animation: wave 1s ease-in-out 3;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(15deg); }
+  80% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
 .about-me {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+#about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
 #about-me h1 {
-  font-size: 65px;
-  margin-top: 90px;
+  font-size: 4rem;
+  margin-top: 0;
   color: #7600bc;
 }
 
 #about-me p {
-  font-size: 25px;
+  font-size: 1.35rem;
   color: rgb(128, 128, 128);
-  margin-top: -1cm;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .profile_image {
-  width: 550px;
-  height: fit-content;
-  vertical-align: middle;
-  margin: 5px;
-  transform: scale(0.8);
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transform: scale(0.95);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -133,6 +174,7 @@ h2 {
 .about-me-box {
   max-width: 700px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .rocket {
@@ -148,11 +190,11 @@ h2 {
 
 .signature {
   display: block;
-  margin-top: 20px;
+  margin-top: 1rem;
   font-style: italic;
   font-size: 1.4em;
   color: #555;
-  text-align: left;
+  text-align: center;
   letter-spacing: 2px;
   border-top: 2px solid #ddd;
   padding-top: 10px;
@@ -162,8 +204,9 @@ h2 {
 
 .all_skills {
   display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .skill {
@@ -171,11 +214,12 @@ h2 {
   display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
-  padding: 10px;
-  width: 2in;
+  margin: 0;
+  padding: 1rem;
+  width: 220px;
   font-size: 20px;
   box-shadow: 0 3px 10px gray;
+  background-color: #fff;
 }
 
 .skill:hover {
@@ -186,6 +230,7 @@ h2 {
 .skill img {
   height: 80px;
   align-items: center;
+  margin: 0 auto 0.75rem;
 }
 
 .skills h6 {
@@ -214,54 +259,57 @@ h2 {
 
 .projects-container {
   margin-top: 30px;
-  margin-left: 60px;
+  margin-left: 0;
 }
 
 .projects-container hr {
   border: 1px solid lightgray;
-  width: 75%;
-  margin-left: 5cm;
+  width: 100%;
+  margin-left: 0;
 }
 
 .project-card {
-  margin: 0 15px 15px 30px;
+  margin: 0 0 1rem 0;
   padding-bottom: 5px;
 }
 
 .project-card h3 {
   font-size: 25px;
-  margin-left: 30px;
+  margin-left: 0;
 }
 
 .project-card li {
   font-size: 20px;
-  margin-left: 30px;
+  margin-left: 1.2rem;
+  line-height: 1.5;
 }
 
 /* Recommendations */
 
 .all_recommendations {
   display: flex;
-  align-items: center;
-  margin-left: 1in;
-  flex-direction: row;
-  flex-flow: wrap;
-  padding: 20px;
+  align-items: stretch;
+  justify-content: center;
+  margin-left: 0;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  gap: 1rem;
 }
 
 .recommendation {
   font-style: italic;
   text-align: left;
-  width: 19.5rem;
-  padding: 1rem;
+  width: 100%;
+  max-width: 19.5rem;
   background-color: #fff;
   border-radius: 11px;
-  box-shadow: 0 3px 10px var(--primary-shadow);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   padding: 20px;
-  margin: 10px;
+  margin: 0;
   border: 1px solid gray;
   font-size: 18px;
-  height: 200px;
+  min-height: 200px;
+  height: auto;
 }
 
 .recommendation span {
@@ -284,25 +332,29 @@ h2 {
   right: 3%;
   bottom: 3%;
   cursor: pointer;
+  z-index: 1000;
 }
 
 /* Form Pop-up */
 
 .popup {
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   background-color: #e8bcf0;
-  border-radius: 3mm;
+  border-radius: 12px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: fixed;
-  /* padding: 30px; */
   visibility: hidden;
+  padding: 1rem;
+  z-index: 2000;
 }
 
 .popup img {
   padding-top: 20px;
+  margin: 0 auto;
 }
 
 .popup button {
@@ -312,11 +364,11 @@ h2 {
   display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
+  margin: 1rem auto 0;
   padding: 10px;
-  width: 2in;
+  width: 100%;
+  max-width: 220px;
   font-size: 20px;
-  margin-left: 25%;
 }
 
 .popup button:hover {
@@ -327,7 +379,6 @@ h2 {
   font-weight: bolder;
   text-align: center;
   cursor: pointer;
-  margin-left: 25%;
 }
 
 /* Recommendation Form */
@@ -337,19 +388,20 @@ textarea {
   font-family:
     'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
     Arial, sans-serif;
-  margin: 10px;
+  margin: 10px 0;
   width: 100%;
+  padding: 0.75rem;
 }
 
 fieldset {
-  display: flexbox;
+  display: block;
   align-content: center;
   justify-content: center;
   padding: 25px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 0 auto;
   border: thin solid white;
-  width: 50%;
+  width: 100%;
+  max-width: 700px;
 }
 
 /* Buttons */
@@ -361,9 +413,10 @@ button {
   display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
-  padding: 10px;
-  width: 2in;
+  margin: 1.5rem auto;
+  padding: 10px 18px;
+  width: 100%;
+  max-width: 220px;
   font-size: 20px;
 }
 
@@ -375,4 +428,172 @@ button:hover {
   border-radius: 6px;
   text-align: center;
   cursor: pointer;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  #about-me h1 {
+    font-size: 3rem;
+  }
+
+  #about-me p {
+    font-size: 1.15rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .introduction {
+    font-size: 1.2rem;
+  }
+
+  .profile_image {
+    max-width: 420px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  #home {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .profile_name {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .profile_name .contact_info {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topdiv {
+    justify-content: center;
+  }
+
+  .topmenu {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .main_container {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .introduction {
+    font-size: 1.05rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .about-me {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  #about-me h1 {
+    font-size: 2.2rem;
+  }
+
+  #about-me p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about-me-box {
+    max-width: 100%;
+  }
+
+  .profile_image {
+    max-width: 320px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .signature {
+    text-align: center;
+  }
+
+  .skill {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .projects-container {
+    margin-top: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card li {
+    font-size: 1rem;
+  }
+
+  .all_recommendations {
+    padding: 10px 0;
+  }
+
+  .recommendation {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  fieldset {
+    padding: 16px;
+  }
+
+  button,
+  .popup button {
+    max-width: 100%;
+  }
+
+  .iconbutton {
+    width: 42px;
+    height: 42px;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 480px) {
+  #about-me h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .profile_name {
+    font-size: 1.1rem;
+  }
+
+  .topmenu {
+    font-size: 0.95rem;
+  }
+
+  .introduction,
+  #about-me p,
+  .project-card li,
+  .recommendation {
+    font-size: 0.95rem;
+  }
+
+  .skill img {
+    height: 64px;
+  }
 }

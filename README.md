@@ -1,5 +1,7 @@
 # Donny Code Portfolio
 
+This project was built as part of a course. Most of the code is based on instructional material and may be subject to the course provider’s terms.
+
 A personal portfolio project showcasing HTML, CSS, and JavaScript skills.
 
 ## 🌐 Live Demo
